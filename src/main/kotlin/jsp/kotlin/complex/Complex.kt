@@ -15,11 +15,16 @@ class Complex(val re: Double, val im: Double) {
     constructor(r: Int, i: Int): this(r.toDouble(), i.toDouble())
     constructor(r: Long, i: Long): this(r.toDouble(), i.toDouble())
 
+    private val re2 = re * re
+    private val im2 = im * im
+
+    val squared: Complex
+        get() = Complex(re2 - im2, 2.0 * re * im)
+
     val conjugate: Complex
         get() = Complex(re, -im)
 
-    val magnitude2: Double
-        get() = re * re + im * im
+    val magnitude2 = re2 + im2
 
     val magnitude: Double
         get() = sqrt(magnitude2)

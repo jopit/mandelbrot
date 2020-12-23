@@ -60,4 +60,10 @@ class ComplexTest : StringSpec({
         result.re shouldBe 4
         result.im shouldBe 6
     }
+
+    "Squared value is correct" {
+        val c = Complex(2, 3)
+        c.squared.re shouldBe -5.0
+        c.squared.im shouldBe 12.0
+    }
 })
